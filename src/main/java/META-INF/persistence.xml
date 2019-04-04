@@ -6,6 +6,8 @@
 		<!-- Choix de l'implémentation JPA (ici Hibernate) -->
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<class>dev.demo_JPA.Livre</class>
+		<class>dev.demo_JPA.Client</class>
+		<class>dev.demo_JPA.Emprunt</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/bdd_library" />
 			<property name="javax.persistence.jdbc.user" value="root" />
