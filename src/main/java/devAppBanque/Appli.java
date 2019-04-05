@@ -76,7 +76,7 @@ public class Appli {
 	}
 
 	private static Client ajoutClient(Scanner sc) {
-		System.out.println("Configuration Banque");
+		System.out.println("Configuration client");
 		Client c = new Client();
 		System.out.println("Donner un nom");
 		String nom = sc.nextLine();
@@ -103,7 +103,7 @@ public class Appli {
 		String sd = sc.nextLine();
 		Double solde = Double.parseDouble(sd);
 		cp.setSolde(solde);
-		System.out.println("Combien de clients vouslez vous associer à ce compte ?");
+		System.out.println("Combien de clients voulez vous associer à ce compte ?");
 		String rep = sc.nextLine();
 		int reponse = Integer.parseInt(rep);
 		int cpt = 0;
