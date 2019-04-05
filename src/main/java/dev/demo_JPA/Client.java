@@ -5,11 +5,15 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import devAppBanque.Client;
+import devAppBanque.Compte;
+
 @Entity
-@Table(name = "Client")
+@Table(name = "client")
 public class Client {
 
 	@Id // obligatoire
@@ -23,6 +27,9 @@ public class Client {
 	@OneToMany(mappedBy="client")
 	private List<Emprunt> emprunts;
 
+	
+	@ManyToMany(mappedBy="clients")
+	private List<Compte> comptes;
 	
 	/**
 	 * @return the iD

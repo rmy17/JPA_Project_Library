@@ -48,6 +48,9 @@ public class App {
 			System.out.println(emp.getID()+" - "+emp.getClient());
 		});
 		
+		//Insertion d'un livre 
+		
+		
 		// Fin d'une unité de travail
 		em1.close();
 		
