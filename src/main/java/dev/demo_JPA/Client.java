@@ -5,12 +5,8 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import devAppBanque.Client;
-import devAppBanque.Compte;
 
 @Entity
 @Table(name = "client")
@@ -23,49 +19,50 @@ public class Client {
 	private String NOM;
 	@Column(name = "PRENOM")
 	private String PRENOM;
-	
-	@OneToMany(mappedBy="client")
+
+	@OneToMany(mappedBy = "client")
 	private List<Emprunt> emprunts;
 
-	
-	@ManyToMany(mappedBy="clients")
-	private List<Compte> comptes;
-	
 	/**
 	 * @return the iD
 	 */
 	public int getID() {
 		return ID;
 	}
+
 	/**
 	 * @param iD the iD to set
 	 */
 	public void setID(int iD) {
 		ID = iD;
 	}
+
 	/**
 	 * @return the nom
 	 */
 	public String getNom() {
 		return NOM;
 	}
+
 	/**
 	 * @param nom the nom to set
 	 */
 	public void setNom(String nom) {
 		NOM = nom;
 	}
+
 	/**
 	 * @return the pRENOM
 	 */
 	public String getPRENOM() {
 		return PRENOM;
 	}
+
 	/**
 	 * @param pRENOM the pRENOM to set
 	 */
 	public void setPRENOM(String pRENOM) {
 		PRENOM = pRENOM;
 	}
-	
+
 }

@@ -1,23 +1,25 @@
 package devAppBanque;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 
 @Entity
 public class Virement extends Operation {
 
-	private String beneficaire;
+	@Column(name = "BENEFICIAIRE")
+	private String beneficiaire;
 
 	/**
-	 * @return the beneficaire
+	 * @return the beneficiaire
 	 */
-	public String getBeneficaire() {
-		return beneficaire;
+	public String getBeneficiaire() {
+		return beneficiaire;
 	}
 
 	/**
-	 * @param beneficaire the beneficaire to set
+	 * @param beneficiaire the beneficiaire to set
 	 */
-	public void setBeneficaire(String beneficaire) {
-		this.beneficaire = beneficaire;
+	public void setBeneficiaire(String beneficiaire) {
+		this.beneficiaire = beneficiaire;
 	}
 }

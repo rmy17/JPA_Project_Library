@@ -3,30 +3,6 @@
 	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-	<persistence-unit name="demo-jpa"
-		transaction-type="RESOURCE_LOCAL">
-		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-		<!-- Choix de l'implémentation JPA (ici Hibernate) -->
-		<class>dev.demo_JPA.Livre</class>
-		<class>dev.demo_JPA.Client</class>
-		<class>dev.demo_JPA.Emprunt</class>
-		<class>devAppBanque.Banque</class>
-		<class>devAppBanque.Compte</class>
-		<class>devAppBanque.Operation</class>
-		<class>devAppBanque.Adresse</class>
-		<class>devAppBanque.Client</class>
-		<class>devAppBanque.LivretA</class>
-		<class>devAppBanque.AssuranceVie</class>
-		<class>devAppBanque.Virement</class>
-		<properties>
-			<property name="javax.persistence.jdbc.url"
-				value="jdbc:mysql://localhost:3306/bdd_library" />
-			<property name="javax.persistence.jdbc.user" value="root" />
-			<property name="javax.persistence.jdbc.password" value="" />
-			<property name="javax.persistence.jdbc.driver"
-				value="com.mysql.jdbc.Driver" />
-		</properties>
-	</persistence-unit>
 	<persistence-unit name="banque"
 		transaction-type="RESOURCE_LOCAL">
 		<!-- Choix de l'implémentation JPA (ici Hibernate) -->
@@ -36,13 +12,18 @@
 		<class>devAppBanque.Operation</class>
 		<class>devAppBanque.Client</class>
 		<class>devAppBanque.Adresse</class>
+		<class>devAppBanque.LivretA</class>
+		<class>devAppBanque.AssuranceVie</class>
+		<class>devAppBanque.Virement</class>
 		<properties>
 			<!-- desactiver l'autodetection des classes de type @Entity -->
 			<property name="hibernate.archive.autodetection" value="" />
 			<!-- Activation de la génération des tables manquantes uniquement -->
 			<property name="hibernate.hbm2ddl.auto" value="update" />
 			<!-- Drop and create à chaque redémarrage -->
-
+			<property
+				name="javax.persistence.schema-generation.database.action"
+				value="drop-and-create" />
 			<!-- Affichage des requêtes SQL -->
 			<property name="hibernate.show_sql" value="true" />
 			<property name="javax.persistence.jdbc.url"
@@ -51,9 +32,23 @@
 			<property name="javax.persistence.jdbc.password" value="" />
 			<property name="javax.persistence.jdbc.driver"
 				value="com.mysql.jdbc.Driver" />
-			<property
-				name="javax.persistence.schema-generation.database.action"
-				value="drop-and-create" />
+
+		</properties>
+	</persistence-unit>
+	<persistence-unit name="demo-jpa"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<!-- Choix de l'implémentation JPA (ici Hibernate) -->
+		<class>dev.demo_JPA.Livre</class>
+		<class>dev.demo_JPA.Client</class>
+		<class>dev.demo_JPA.Emprunt</class>
+		<properties>
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:mysql://localhost:3306/bdd_library" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password" value="" />
+			<property name="javax.persistence.jdbc.driver"
+				value="com.mysql.jdbc.Driver" />
 		</properties>
 	</persistence-unit>
 </persistence>

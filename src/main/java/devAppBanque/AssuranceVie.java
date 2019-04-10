@@ -2,39 +2,32 @@ package devAppBanque;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 
 @Entity
 public class AssuranceVie extends Compte {
 
-	private LocalDate dateFin;
-	private Double taux;
+	@Column(name = "TAUX")
+	private double taux;
 
-	/**
-	 * @return the dateFin
-	 */
+	@Column(name = "DATE_FIN")
+	private LocalDate dateFin;
+
 	public LocalDate getDateFin() {
 		return dateFin;
 	}
 
-	/**
-	 * @param dateFin the dateFin to set
-	 */
 	public void setDateFin(LocalDate dateFin) {
 		this.dateFin = dateFin;
 	}
 
-	/**
-	 * @return the taux
-	 */
-	public Double getTaux() {
+	public double getTaux() {
 		return taux;
 	}
 
-	/**
-	 * @param taux the taux to set
-	 */
-	public void setTaux(Double taux) {
+	public void setTaux(double taux) {
 		this.taux = taux;
 	}
+
 }
